@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>I -∧ NY</title>
+    <link rel="shortcut icon" type="image/jpg" href="./img/aphex.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/artwork.css" />
+    <link rel="stylesheet" type="text/css" href="./css/nav.css" />
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="active" href="index.html">I -∧ NY</a>
+      <a href="#news">Designs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="artwork.html">Artwork</a>
+    </div>
+
+    <!-- <iframe id="iframeAudio" style="display:none"></iframe> -->
+
+    <audio controls id="playAudio">
+      <source
+        src="./music/rooftop. [jazz hop lofi chillhop].mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <div class="container">
+      <div class="row">
+        <!-- Images used to open the lightbox -->
+        <div class="row">
+          <div class="col-md12">
+            <div class="column">
+              <img
+                src="./img/art1.jpg"
+                onclick="openModal();currentSlide(1)"
+                class="hover-shadow"
+                height="400px"
+                width="350px"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="./img/art2.jpg"
+                onclick="openModal();currentSlide(2)"
+                class="hover-shadow"
+                height="400px"
+                width="350px"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="./img/art3.jpg"
+                onclick="openModal();currentSlide(3)"
+                class="hover-shadow"
+                height="400px"
+                width="350px"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="./img/art4.jpg"
+                onclick="openModal();currentSlide(4)"
+                class="hover-shadow"
+                height="400px"
+                width="350px"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="./img/art5.jpg"
+                onclick="openModal();currentSlide(5)"
+                class="hover-shadow"
+                height="400px"
+                width="350px"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="./img/art6.jpg"
+                onclick="openModal();currentSlide(6)"
+                class="hover-shadow"
+                height="400px"
+                width="350px"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="./img/art8.jpg"
+                onclick="openModal();currentSlide(7)"
+                class="hover-shadow"
+                height="400px"
+                width="350px"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="./img/img9.jpg"
+                onclick="openModal();currentSlide(8)"
+                class="hover-shadow"
+                height="400px"
+                width="350px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <audio
+        controls="controls"
+        onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 1000)"
+      >
+        <source
+          src="./music/rooftop. [jazz hop lofi chillhop].mp3"
+          type="audio/mp3"
+        />
+      </audio> -->
+    </div>
+
+    <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <div class="numbertext">1 / 8</div>
+          <img src="./img/art1.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 8</div>
+          <img src="./img/art2.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 8</div>
+          <img src="./img/art3.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">4 / 8</div>
+          <img src="./img/art4.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">5 / 8</div>
+          <img src="./img/art5.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">6 / 8</div>
+          <img src="./img/art6.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">7 / 8</div>
+          <img src="./img/art8.jpg" style="width:100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">8 / 8</div>
+          <img src="./img/art9.jpg" style="width:100%" />
+        </div>
+
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <!-- Caption text -->
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <!-- Thumbnail image controls -->
+        <div class="column">
+          <img
+            class="demo"
+            src="./img/art1.jpg"
+            onclick="currentSlide(1)"
+            height="250px"
+            width="300px"
+          />
+        </div>
+
+        <div class="column">
+          <img
+            class="demo"
+            src="./img/art2.jpg"
+            onclick="currentSlide(2)"
+            height="250px"
+            width="300px"
+          />
+        </div>
+
+        <div class="column">
+          <img
+            class="demo"
+            src="./img/art3.jpg"
+            onclick="currentSlide(3)"
+            height="250px"
+            width="300px"
+          />
+        </div>
+
+        <div class="column">
+          <img
+            class="demo"
+            src="./img/art4.jpg"
+            onclick="currentSlide(4)"
+            height="250px"
+            width="300px"
+          />
+        </div>
+
+        <div class="column">
+          <img
+            class="demo"
+            src="./img/art5.jpg"
+            onclick="currentSlide(5)"
+            height="250px"
+            width="300px"
+          />
+        </div>
+
+        <div class="column">
+          <img
+            class="demo"
+            src="./img/art6.jpg"
+            onclick="currentSlide(6)"
+            height="250px"
+            width="300px"
+          />
+        </div>
+
+        <div class="column">
+          <img
+            class="demo"
+            src="./img/art8.jpg"
+            onclick="currentSlide(7)"
+            height="250px"
+            width="300px"
+          />
+        </div>
+
+        <div class="column">
+          <img
+            class="demo"
+            src="./img/art9.jpg"
+            onclick="currentSlide(8)"
+            height="250px"
+            width="300px"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- <script src="./js/audio.js"></script> -->
+    <script src="./js/test.js"></script>
+  </body>
+</html>
