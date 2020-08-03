@@ -19,7 +19,7 @@ const ProductPage = () => {
 
   if (!product.title) return <div>loading</div>;
   return (
-    <Container>
+    <Container bg="white">
       <Row>
         <Col>
           <Div
@@ -30,9 +30,15 @@ const ProductPage = () => {
           />
         </Col>
         <Col>
-          <Text>{product.title}</Text>
-          <Text>${product.variants[0].price}</Text>
+          <Text textSize="50px">{product.title}</Text>
+          <Text
+            textSize="20px"
+            style={{ paddingTop: "15px", paddingBottom: "15px" }}
+          >
+            ${product.variants[0].price}
+          </Text>
           <Button
+            textAlign="center"
             onClick={() => {
               addItemToCheckout(product.variants[0].id, 1);
               openCart();

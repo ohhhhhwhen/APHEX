@@ -7,12 +7,12 @@ const Navbar = () => {
   const { openCart } = useContext(ShopContext);
 
   return (
-    <Container d="flex" flexDir="row" p="2rem" justify="space-between">
-      <Link style={{ color: '#FF0000' }} to="/">HOME</Link>
-      <Link style={{ color: '#FF0000' }} to="/gallery">GALLERY</Link>
-      <Link style={{ color: '#FF0000' }} to="/artwork">ARTWORK</Link>
-      <Link style={{ color: '#FF0000' }} to="/products">SHOP</Link>
-      <Anchor style={{ color: '#FF0000' }}  onClick={() => openCart()}>Cart</Anchor>
+    <Container bg='grey' d="flex" flexDir="row" p="2rem" justify="space-between">
+      <Link style={{ color: '#000000' }} to="/">HOME</Link>
+      <Link style={{ color: '#000000' }} to="/gallery">GALLERY</Link>
+      <Link style={{ color: '#000000' }} to="/artwork">ARTWORK</Link>
+      <Link style={{ color: '#000000' }} to="/products">SHOP</Link>
+      <Anchor style={{ color: '#000000' }}  onClick={() => openCart()}>Cart</Anchor>
     </Container>
   );
 };

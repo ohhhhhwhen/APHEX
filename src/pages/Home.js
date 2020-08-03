@@ -1,11 +1,9 @@
 import React, { Component } from "react";
+import { Container } from "atomize";
 import "./Home.css";
 import API from "../utils/API";
 
-const images = [
-  "basquiat",
-  "warhol",
-];
+const images = ["basquiat", "warhol"];
 
 class Home extends Component {
   state = {
@@ -22,18 +20,18 @@ class Home extends Component {
 
   render() {
     return (
-      <div id="mainContent">
-        <ul className="list-group">
-          {this.state.results &&
-            this.state.results.map(result => (
-              <img
-                id="gifBk"
-                key={result.id}
-                src={result.images.downsized_large.url}
-              />
-            ))}
-        </ul>
-      </div>
+      <Container>
+        {this.state.results &&
+          this.state.results.map(result => (
+            <img
+              id="gifBk"
+              key={result.id}
+              src={result.images.downsized_large.url}
+              height="380px"
+              width="380px"
+            />
+          ))}
+      </Container>
     );
   }
 }

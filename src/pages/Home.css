@@ -12,7 +12,6 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 706px;
   }
   
   @media only screen and (max-width: 450px) {
@@ -27,4 +26,20 @@ body {
       margin-right: auto;
       width: 156px;
     }
+  }
+
+  #row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  #column {
+    flex: 50%;
+    padding: 0 4px;
+  }
+  
+  #gifBk{
+    margin-top: 8px;
+    vertical-align: middle;
   }

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ShopContext } from "../context/shopContext";
 import { Container, Text, Div, Row, Col } from "atomize";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
@@ -13,10 +14,10 @@ const HomePage = () => {
 
   if (!products) return <div>loading</div>;
   return (
-    <Container>
+    <Container bg='white'>
       <Row>
         {products.map(product => (
-          <Col key={product.id} size="3">
+          <Col key={product.id} size="4">
             <Link to={`/product/${product.id}`}>
               <Div p="2rem">
                 <Div
@@ -25,8 +26,8 @@ const HomePage = () => {
                   bgSize="cover"
                   bgPos="center center"
                 />
-                <Text>{product.title}</Text>
-                <Text>{product.variants[0].price}</Text>
+                <Text textAlign="center" style={{ color: '#000000' }}>{product.title}</Text>
+                <Text textAlign="center" style={{ color: '#000000' }}>${product.variants[0].price}</Text>
               </Div>
             </Link>
           </Col>
