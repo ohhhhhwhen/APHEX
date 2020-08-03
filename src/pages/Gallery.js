@@ -2,20 +2,21 @@ import React from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import Lightbox from "react-image-lightbox";
 import "./Gallery.css";
-import IMG1 from "../images/art1.jpg";
-import IMG2 from "../images/art2.jpg";
-import IMG3 from "../images/art3.jpg";
-import IMG4 from "../images/art4.jpg";
-import IMG5 from "../images/art5.jpg";
-import IMG6 from "../images/art6.jpg";
-import IMG7 from "../images/art8.jpg";
-import IMG8 from "../images/img9.jpg";
+import IMG1 from "../extra//images/img1.jpg";
+import IMG2 from "../extra//images/img2.jpg";
+import IMG3 from "../extra//images/img3.jpg";
+import IMG4 from "../extra//images/img4.jpg";
+import IMG5 from "../extra//images/img5.jpg";
+import IMG6 from "../extra//images/img6.jpg";
+import IMG7 from "../extra//images/img7.jpg";
+import IMG8 from "../extra//images/img8.jpg";
+
 
 const images = [IMG1, IMG2, IMG3, IMG4, IMG5, IMG6, IMG7, IMG8];
 
 const smallImages = [IMG1, IMG2, IMG3, IMG4, IMG5, IMG6, IMG7, IMG8];
 
-class Artwork extends React.Component {
+class Gallery extends React.Component {
   constructor(props) {
     super(props);
 
@@ -137,4 +138,4 @@ class Artwork extends React.Component {
   }
 }
 
-export default Artwork;
+export default Gallery;

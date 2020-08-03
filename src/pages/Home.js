@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import "./Home.css";
-import API from "../../utils/API";
-
+import API from "../utils/API";
 
 const images = [
   "basquiat",
   "warhol",
-  "louis vuitton",
-  "raf simons",
-  "virgil abloh"
 ];
 
 class Home extends Component {
@@ -17,7 +13,7 @@ class Home extends Component {
   };
 
   componentDidMount = () => {
-    var randomNumber = Math.floor(Math.random() * 5);
+    var randomNumber = Math.floor(Math.random() * 2);
     console.log(randomNumber);
     API.artwork(images[randomNumber])
       .then(res => this.setState({ results: res.data.data }))

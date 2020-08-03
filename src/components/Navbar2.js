@@ -74,19 +74,6 @@ class Navbar extends Component {
                     ? "nav-link active"
                     : "nav-link"
                 }
-                to="/Designs"
-              >
-                DESIGNS
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                onClick={this.toggleNav}
-                className={
-                  window.location.pathname === "/saved"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
                 to="/Gallery"
               >
                 GALLERY
@@ -104,6 +91,34 @@ class Navbar extends Component {
                 to="/Artwork"
               >
                 ARTWORK
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
+                onClick={this.toggleNav}
+                className={
+                  window.location.pathname === "/saved"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+                to="/Products"
+              >
+                SHOP
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
+                onClick={this.toggleNav}
+                className={
+                  window.location.pathname === "/saved"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+                to="/Product/:id"
+              >
+                EXTRA
               </Link>
             </li>
           </ul>

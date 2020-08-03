@@ -1,29 +1,60 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import logo from "./logo.svg";
-import "./App.css";
-import Home from "./components/pages/Home";
-import Navbar from "./components/layout/Navbar";
-import Gallery from "./components/pages/Gallery";
-import Artwork from "./components/pages/Artwork";
-import "bootstrap/dist/css/bootstrap.min.css";
-import MP3 from "./components/music/Kid CudiPissy Pamper - Playboi Carti (Indian Remix).mp3";
-import ReactAudioPlayer from "react-audio-player";
+import React from "react";
+import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
+import { Client as Styletron } from "styletron-engine-atomic";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <Navbar />
-        <div className="container">
-          <ReactAudioPlayer src={MP3} autoPlay controls/>
-          <Route path="/" exact={true} component={Home} />
-          <Route path="/Gallery" exact={true} component={Gallery} />
-          <Route path="/Artwork" exact={true} component={Artwork} />
-        </div>
-      </Router>
-    );
-  }
+import HomePage from "../pages/HomePage";
+import ProductPage from "../pages/ProductPage";
+import ShopProvider from "../context/shopContext";
+import NavBar from "../components/Navbar";
+import Cart from "../components/Cart";
+import MainPage from "../pages/Home";
+import Artwork from "../pages/Artwork";
+import Gallery from "../pages/Gallery";
+import Navbar from "../components/Navbar2";
+
+const debug =
+  process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
+
+const engine = new Styletron();
+
+function App() {
+  return (
+    <ShopProvider>
+      <StyletronProvider value={engine} debug={debug} debugAfterHydration>
+        <Router>
+          <NavBar />
+          <Cart />
+          <Switch>
+          <Route path="/artwork">
+              <Artwork />
+            </Route>
+            <Route path="/gallery">
+              <Gallery />
+            </Route>
+            <Route path="/products">
+              <HomePage />
+            </Route>
+            <Route path="/product/:id">
+              <ProductPage />
+            </Route>
+            <Route path="/">
+              <MainPage />
+            </Route>
+          </Switch>
+          {/* <Cart />
+          <Navbar />
+          <div className="container">
+            <Route path="/" exact={true} component={MainPage} />
+            <Route path="/Gallery" exact={true} component={Gallery} />
+            <Route path="/Artwork" exact={true} component={Artwork} />
+            <Route path="/Products" exact={true} component={HomePage} />
+            <Route path="/Product/:id" exact={true} component={ProductPage} />
+          </div> */}
+        </Router>
+      </StyletronProvider>
+    </ShopProvider>
+  );
 }
 
 export default App;
